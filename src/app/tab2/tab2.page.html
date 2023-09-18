@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>clases</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToTab1()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div> 
+  <!-- Información del instructor -->
+  <ion-card>
+    <ion-card-header>
+      Información del Instructor
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Aquí muestra la información del instructor (nombre, categoría, etc.) -->
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista de clases agendadas -->
+  <ion-list>
+    <ion-item *ngFor="let clase of clases">
+      <ion-label>
+        <h2>{{ clase.estudiante }}</h2>
+        <p>Categoría: {{ clase.categoria }}</p>
+        <p>Hora de la clase: {{ clase.hora }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

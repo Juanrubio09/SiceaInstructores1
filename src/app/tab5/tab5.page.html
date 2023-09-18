@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>notificaciones</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToTab1()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div> 
+  <ion-card class="notification-card">
+    <ion-card-header>
+      Pico y Placa
+    </ion-card-header>
+    <ion-card-content>
+      <p>El pico y placa es una restricción vehicular que se aplica en la ciudad.</p>
+      <p>En días impares no pueden circular placas terminadas en 6, 7, 8, 9 o 0.</p>
+      <p>En días pares no pueden circular placas terminadas en 1, 2, 3, 4 o 5.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Ion Card para el listado de notificaciones ficticias -->
+  <ion-card class="notification-card">
+    <ion-card-header>
+      Notificaciones
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <!-- Notificación ficticia 1 -->
+        <ion-item>
+          <ion-label>
+            Clase cancelada: Matemáticas
+          </ion-label>
+        </ion-item>
+        
+        <!-- Notificación ficticia 2 -->
+        <ion-item>
+          <ion-label>
+            Nuevo mensaje: Reunión de padres
+          </ion-label>
+        </ion-item>
+
+        <!-- Notificación ficticia 3 -->
+        <ion-item>
+          <ion-label>
+            Tarea pendiente: Historia
+          </ion-label>
+        </ion-item>
+
+        <!-- Notificación ficticia 4 -->
+        <ion-item>
+          <ion-label>
+            Evento: Celebración del Día del Estudiante
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "instrucores",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

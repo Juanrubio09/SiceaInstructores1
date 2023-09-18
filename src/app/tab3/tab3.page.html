@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Asistencia</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToTab1()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div> 
+  <ion-list>
+    <ion-item *ngFor="let clase of clases">
+      <ion-label>
+        <h2>{{ clase.estudiante }}</h2>
+        <p>Categoría: {{ clase.categoria }}</p>
+        <p>Hora de la clase: {{ clase.hora }}</p>
+        <ion-card *ngIf="clase.asistenciaRegistrada" [ngClass]="{'asistencia-verde': clase.asistio, 'asistencia-rojo': !clase.asistio}">
+          <ion-card-content>
+            El estudiante {{ clase.asistio ? 'asistió' : 'no asistió' }}.
+          </ion-card-content>
+        </ion-card>
+      </ion-label>
+      <ion-button slot="end" (click)="showAsistenciaAlert(clase)">Asistencia</ion-button>
+      <!-- Mueve el ion-card-content aquí para que aparezca debajo del botón -->
+      
+    </ion-item>
+  </ion-list>
+
+  <!-- Contenido de la página Tab 3 aquí -->
+</ion-content>

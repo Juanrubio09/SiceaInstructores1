@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>PQR</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToTab1()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background-image"></div> 
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Fecha:</ion-label>
+      <!-- Utiliza el campo ion-datetime para mostrar la fecha en tiempo real -->
+      <ion-datetime displayFormat="D MMM YYYY" [(ngModel)]="fecha"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Motivo:</ion-label>
+      <!-- Utiliza un campo ion-select para el menú desplegable de motivo -->
+      <ion-select [(ngModel)]="motivo">
+        <ion-select-option value="averia">Avería Mecánica</ion-select-option>
+        <ion-select-option value="incapacidad">Incapacidad Médica</ion-select-option>
+        <ion-select-option value="alumno">Alumno</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción:</ion-label>
+      <!-- Utiliza un campo ion-textarea para el espacio de redacción de texto -->
+      <ion-textarea [(ngModel)]="descripcion" rows="6"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Adjuntar:</ion-label>
+      <!-- Utiliza un campo de entrada de archivo para adjuntar archivos -->
+      <input type="file" (change)="adjuntarArchivo($event)">
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón "Listo" que muestra el alertController -->
+  <ion-button expand="full" (click)="registrarPQR()">Listo</ion-button>
+</ion-content>
